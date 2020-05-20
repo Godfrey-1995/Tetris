@@ -20,6 +20,8 @@ export default class NewClass extends cc.Component {
 
     OnBtnRotateClick(event) {}
 
+    OnBtnBackClick(event) {}
+
     InitView () {
         this.GenerateMainBlock();
         this.InitBaseInfo();
@@ -28,4 +30,8 @@ export default class NewClass extends cc.Component {
     GenerateMainBlock() {}
 
     InitBaseInfo() {}
+
+    CollsionTest() {}
+
+    CheckIsFullLine() {}
 }
