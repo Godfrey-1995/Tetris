@@ -1,0 +1,17 @@
+{
+    "name": "ffengine",
+    "version": "1.0.0",
+    "description": "ff引擎",
+    "author": "ZTF",
+    "main": "main.js",
+    
+    "runtime-resource": {
+        "path": "Assets",
+        "name": "ff-engine"
+    },
+    "reload": {
+        "ignore":[
+            "Assets/**/*"
+        ]
+    }
+  }
