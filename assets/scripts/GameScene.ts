@@ -7,8 +7,9 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+import { Loader } from './LoaderUtils';
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -21,19 +22,14 @@ export default class NewClass extends cc.Component {
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {}
+    onLoad() { }
 
-    start () {
+    start() {
         this.OpenFirstView();
     }
 
-    OpenFirstView () {
-        cc.loader.loadRes('perfab/LoginView', (err, perfab)=>{
-            if (err) {
-                cc.error('loadRes failed ' + err);
-                return;
-            }
-
+    OpenFirstView() {
+        Loader.LoadRes('prefab/LoginView', (perfab) => { 
             let loginView = cc.instantiate(perfab);
             loginView.parent = this.Ui
         });

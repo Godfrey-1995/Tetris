@@ -1,3 +1,4 @@
+import { Loader } from './LoaderUtils';
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -23,9 +24,16 @@ export default class NewClass extends cc.Component {
 
     start() {}
 
-    OnClickStart() {}
+    OnClickStart() {
+        Loader.LoadRes('prefab/GameView', (perfab) => { 
+            let loginView = cc.instantiate(perfab);
+            loginView.parent = this.node;
+        });
+    }
 
     OnClickOption() {}
 
-    OnClickExit() {}
+    OnClickExit() {
+        cc.game.end();
+    }
 }
